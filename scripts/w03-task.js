@@ -52,7 +52,6 @@ document.querySelector("#divideNumbers").addEventListener("click", divideNumbers
 let getTotal = ()=>{
     let numeric = Number(document.querySelector("#subtotal").value);
     let clubMember = document.querySelector("#member").checked;
-    console.log(numeric);
     if (clubMember){
         numeric -= numeric*0.2;
     }
