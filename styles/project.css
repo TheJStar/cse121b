@@ -2,6 +2,7 @@
     margin-top: 150px;
     display: grid;
     grid-template-rows: 100%, 100%;
+    overflow-x: hidden;
 }
 
 #pokigrid {
@@ -25,11 +26,6 @@ nav {
     width: 100%;
     background: linear-gradient(white 0% 70%, #00000000 85%);
     position: fixed;
-}
-
-div {
-    overflow-x: hidden;
-    overflow-y: visible;
 }
 
 img:hover {
