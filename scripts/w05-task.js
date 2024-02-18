@@ -15,6 +15,7 @@ const displayTemples = (temples) => {
         img.setAttribute("alt", temple.location);
         artical.appendChild(h3);
         artical.appendChild(img);
+        console.log(templesElement);
         templesElement.appendChild(artical);
     })
 };

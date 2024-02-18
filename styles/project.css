@@ -1,0 +1,40 @@
+#pokigrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: .5rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+img:hover {
+    scale: 140%;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+h3, h4, h5 {
+    text-align: center;
+}
+
+#searchbar {
+    margin: 10px 0 10px 100px;
+    width: 500px;
+}
+
+#searchbutton {
+    margin-left: 0;
+}
+
+#searchbutton, #searchbar {
+    height: 50px;
+    padding: 0;
+}
