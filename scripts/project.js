@@ -34,7 +34,7 @@ const displayPokemons = (pokemon) => {
         base_sp.textContent = `Base Speed: ${pokemon.stats[5].base_stat}`;
         
         if (pokemon.sprites.front_default == null) {
-            img.setAttribute("src", "./images/image_missing.png");
+            img.setAttribute("src", "images/image_missing.png");
         }else{
             img.setAttribute("src", pokemon.sprites.front_default);
         }
@@ -80,6 +80,7 @@ const getPokemons = async() => {
     // https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1302 // all pokemon there is a total of 1302 pokemon
     let response = await fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1302");
     if (response.ok){
+        reset()
         pokemonList = await response.json();
         
         for (let i = 0; i < 1302; i++) {
