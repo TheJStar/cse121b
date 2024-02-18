@@ -118,3 +118,11 @@ searchButton.addEventListener("click", async()=>{
         getSinglePokemon(inputField.value.trim().toLowerCase())
     }
 });
+inputField.addEventListener("keyup", async()=>{
+    if (!inputField.value.trim()) { // empty field
+        searchButton.textContent = "Get all Pokemon";
+    }
+    else {
+        searchButton.textContent = "Search";
+    }
+});
