@@ -4,9 +4,12 @@
 const pokiElement = document.getElementById("pokigrid");
 let pokemonList = {};
 let pokemonNameList = [];
+const totalPokemonAmount = 1302;
+let pokemonToShow = 1302;
 let inputField = document.querySelector("#searchbar");
 let searchButton = document.querySelector("#searchbutton");
 let enterKey = 13;
+const fetchControler = new AbortController();
 
 const displayPokemons = (pokemon) => {
         let artical = document.createElement("artical");
@@ -78,20 +81,24 @@ const getSinglePokemon = async(id) => {
 
 const getPokemons = async() => {
     // https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1302 // all pokemon there is a total of 1302 pokemon
+    const { signal } = fetchControler;
+
     let response = await fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1302");
     if (response.ok){
         reset()
         pokemonList = await response.json();
-        
-        for (let i = 0; i < 1302; i++) {
-            let newpokemon = [];
-            response = await fetch(pokemonList.results[i].url);
+        searchButton.setAttribute("disabled", "disabled");
+        searchButton.textContent = "Loading Pokemon Data";
+        for (let i = 0; i < pokemonToShow; i++) {
+            response = await fetch(pokemonList.results[i].url, { signal });
             pokemonNameList.push(pokemonList.results[i].name);
             if (response.ok){
                 newpokemon = await response.json();
             }
             displayPokemons(newpokemon);
         }
+        searchButton.removeAttribute("disabled");
+        searchButton.textContent = "Get all Pokemon";
     }
 }
 
