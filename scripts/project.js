@@ -40,6 +40,7 @@ const displayPokemons = (pokemon) => {
         }
         img.setAttribute("alt", pokemon.name);
 
+        // imageContainer.appendChild(img);
         artical.appendChild(img);
         artical.appendChild(name);
         artical.appendChild(type);

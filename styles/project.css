@@ -1,4 +1,11 @@
+#pokidex {
+    margin-top: 150px;
+    display: grid;
+    grid-template-rows: 100%, 100%;
+}
+
 #pokigrid {
+    margin-top: 150px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: .5rem;
@@ -6,8 +13,24 @@
     margin-bottom: 3rem;
 }
 
+nav {
+    z-index: 1;
+}
+
+.fixed {
+    z-index: 1;
+    margin-top: -100px;
+    display: block;
+    height: 200px;
+    width: 100%;
+    background: linear-gradient(white 0% 70%, #00000000 85%);
+    position: fixed;
+}
+
 img:hover {
     scale: 140%;
+    animation: shine 500ms;
+    filter: drop-shadow(5px 5px 10px rgb(66, 66, 66));
 }
 
 img {
@@ -19,6 +42,7 @@ img {
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
+    transition: 100ms;
 }
 
 h3, h4, h5 {
@@ -37,4 +61,13 @@ h3, h4, h5 {
 #searchbutton, #searchbar {
     height: 50px;
     padding: 0;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: 355px 0px;
+    }
 }
