@@ -75,7 +75,7 @@ h3, h4, h5 {
 }
 @media screen and (max-width: 800px) {
     #searchbar {
-        margin-left: 40px;
+        margin-left: 20px;
         width: 45%;
         justify-self: center;
     }
