@@ -14,6 +14,7 @@ const fetchControler = new AbortController();
 const displayPokemons = (pokemon) => {
         let artical = document.createElement("artical");
         let name = document.createElement("h2");
+        let allTypes = "";
         let type = document.createElement("h3");
         let height = document.createElement("h4");
         let weight = document.createElement("h4");
@@ -26,7 +27,12 @@ const displayPokemons = (pokemon) => {
         let img = document.createElement("img");
 
         name.textContent = pokemon.name.replace(/\b\w/g, c=> c.toUpperCase()); // title case 
-        type.textContent = pokemon.types[0].type.name.replace(/\b\w/g, c=> c.toUpperCase());
+        
+        for (let i = 0; i < pokemon.types.length; i++) {
+            allTypes += ` ${pokemon.types[i].type.name.replace(/\b\w/g, c=> c.toUpperCase())}`;
+        }
+        
+        type.textContent = allTypes;
         height.textContent = `Height: ${pokemon.height} ft`;
         weight.textContent = `Weight: ${pokemon.weight} lb`;
         base_hp.textContent = `Base HP: ${pokemon.stats[0].base_stat}`;
