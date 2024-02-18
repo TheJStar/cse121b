@@ -27,6 +27,11 @@ nav {
     position: fixed;
 }
 
+div {
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
 img:hover {
     scale: 140%;
     animation: shine 500ms;
